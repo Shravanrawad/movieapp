@@ -1,4 +1,4 @@
-fetch(`https://imdb8.p.rapidapi.com/auto-complete?q=avengers&limit=20`, {
+fetch(`https://imdb8.p.rapidapi.com/auto-complete?q=avengers`, {
         'method': 'GET',
         'headers': {
            'X-RapidAPI-Key': '6e97476c6cmsh07897574844bbdfp1c4dafjsn84d84a9f4ec8',
