@@ -49,6 +49,7 @@ header .searcharea {
     margin: 20px;
     margin-right: 80px;
 }
+
 .searcharea input {
     width: 400px;
     height: 40px;
@@ -80,7 +81,31 @@ header .searcharea {
     background-color: skyblue;
     border: none;
 }
-
+.searcharea .searchresult {
+    position: absolute;
+    height: 420px;
+    width: 400px;
+    border-radius: 20px;
+    border: 2px solid white;
+    display: none;
+    overflow-y: auto;
+}
+.searchresult::-webkit-scrollbar {
+    display: none;
+}
+.searchresult ul {
+    padding: 15px 10px;
+    color: white;
+}
+.searcharea ul li {
+    list-style: none;
+    border-radius: 3px;
+    padding: 15px 10px;
+    cursor: pointer;   
+}
+.searchresult ul li:hover {
+    background: #444;
+}
 .content {
     height: 100%;
     width: 100%;  

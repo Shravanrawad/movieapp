@@ -33,6 +33,8 @@ let createcard = (movie) => {
 
 let searchbtn = document.querySelector('.searchbtn');
 searchbtn.addEventListener("click", function(){
+    const searchresult = document.querySelector('.searchresult');
+    searchresult.style.display = 'none';
     let input = document.querySelector('input').value;
     let ul  = document.querySelector('.cardlist').innerHTML = '';
     input.innerHTML = '';
@@ -110,4 +112,54 @@ let createcard = (movie) => {
  })
 })  
 
+let availablesearch = [
+    'Bollywood',
+    'Hollywood',
+    'Crime',
+    'Animation',
+    'Comedy',
+    'Drama',
+    'Adventure',
+    'Historical',
+    'Action',
+    'Science',
+    'Tv show',
+    'Avengers',
+    'Hulk',
+    'Marathi',
+    'Pathan',
+    'pk',
+];
 
+const inputbox = document.getElementById('inputbox');
+inputbox.onkeyup = function(){
+    const searchresult = document.querySelector('.searchresult');
+    if(inputbox.value.length > 0 ){
+        searchresult.style.display = 'block'
+    }
+    else {
+        searchresult.style.display = 'none'
+    };
+
+    let result = [];
+    let input = inputbox.value;
+    if(input.length){
+        result = availablesearch.filter((keyword) => {
+        return keyword.toLowerCase().includes(input.toLowerCase());
+        });
+    }
+    display(result);
+}
+
+function display(result){
+    const searchresult = document.querySelector('.searchresult');
+    const content = result.map((list)=>{
+          return "<li onclick = selectinput(this)>"  + list  + "</li>";
+    });
+
+    searchresult.innerHTML = "<ul>" + content.join('') + "</ul>";
+}
+
+function selectinput(list){
+    inputbox.value = list.innerHTML;
+}
