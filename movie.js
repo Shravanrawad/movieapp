@@ -154,7 +154,7 @@ inputbox.onkeyup = function(){
 function display(result){
     const searchresult = document.querySelector('.searchresult');
     const content = result.map((list)=>{
-          return "<li onclick = selectinput(this)>"  + list  + "</li>";
+          return "<li onclick = selectinput(this)>" + list  + "</li>";
     });
 
     searchresult.innerHTML = "<ul>" + content.join('') + "</ul>";

@@ -85,8 +85,9 @@ header .searcharea {
     position: absolute;
     height: 420px;
     width: 400px;
+    background-color: #333;
     border-radius: 20px;
-    border: 2px solid white;
+    border: none;
     display: none;
     overflow-y: auto;
 }
@@ -101,7 +102,11 @@ header .searcharea {
     list-style: none;
     border-radius: 3px;
     padding: 15px 10px;
-    cursor: pointer;   
+    cursor: pointer;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 5px;   
 }
 .searchresult ul li:hover {
     background: #444;
